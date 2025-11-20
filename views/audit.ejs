@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Login Audit Log</title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <h1>Login Audit Log</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Username</th>
+          <th>Success?</th>
+          <th>Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (attempts.length === 0) { %>
+          <tr>
+            <td colspan="4">No login attempts recorded yet.</td>
+          </tr>
+        <% } else { %>
+          <% attempts.forEach(attempt => { %>
+            <tr>
+              <td><%= attempt.attemptTime %></td>
+              <td><%= attempt.username %></td>
+              <td><%= attempt.success ? 'Yes' : 'No' %></td>
+              <td><%= attempt.reason %></td>
+            </tr>
+          <% }) %>
+        <% } %>
+      </tbody>
+    </table>
+
+    <p><a href="/">Back home</a></p>
+  </body>
+</html>

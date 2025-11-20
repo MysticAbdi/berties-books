@@ -11,12 +11,11 @@
     <% if (availableBooks && availableBooks.length) { %>
       <table>
         <thead>
-          <tr><th>ID</th><th>Title</th><th>Price</th></tr>
+          <tr><th>Title</th><th>Price</th></tr>
         </thead>
         <tbody>
           <% availableBooks.forEach(b => { %>
             <tr>
-              <td><%= b.id %></td>
               <td><%= b.name %></td>
               <td>£<%= b.price %></td>
             </tr>

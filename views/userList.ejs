@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%=shopData.shopName%></title>
+    <link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+<body>
+    <header>
+        <h1><%= shopData.shopName %> Shop</h1>
+    </header>
+
+    <main>
+        <h2>Our current users:</h2>
+        <% if(users.length > 0) { %>
+        <ul>
+            <% users.forEach(function(user) { %>
+                <li class="user">
+                    <strong>Name:</strong> <%= user.first_name %> <%= user.last_name %>
+                </li>
+            <% }); %>
+        </ul>
+        <% } else { %>
+        <p>No users currently.</p>
+    <% } %>
+    </main>
+    <p><a href="/">Back home</a></p>
+</body>
+</html>
